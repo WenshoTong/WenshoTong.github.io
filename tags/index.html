@@ -27,8 +27,8 @@
 <meta property="og:site_name" content="刘泽霖的便利贴">
 <meta property="og:description" content="看得懂的书，请仔细看；看不懂的书，请硬着头皮看。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-06T11:36:01.000Z">
-<meta property="article:modified_time" content="2021-05-28T14:57:25.369Z">
+<meta property="article:published_time" content="2021-05-28T15:16:13.000Z">
+<meta property="article:modified_time" content="2021-05-28T15:16:24.407Z">
 <meta property="article:author" content="刘泽霖">
 <meta property="article:tag" content="刘泽霖 唐文疏 刘泽霖的博客网站 唐文疏的博客网站 WenshoTong">
 <meta name="twitter:card" content="summary">
@@ -120,6 +120,11 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
@@ -184,10 +189,10 @@
       <div class="post-body">
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-              暂无标签
+              目前共计 1 个标签
             </div>
             <div class="tag-cloud-tags">
-              
+              <a href="/tags/%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A/" style="font-size: 12px; color: #ccc">中国共产党</a>
             </div>
           </div>
         
@@ -266,9 +271,19 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -306,7 +321,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">刘泽霖</span>
+  <span class="author" itemprop="copyrightHolder">刘泽霖（Wensho Tong）</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
@@ -354,11 +369,44 @@
 
 
 
+  <script>
+    (function(d, w, c) {
+      w.ChatraID = '';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+  </script>
+
+
+  <script src="//code.tidio.co/.js"></script>
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
-
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
